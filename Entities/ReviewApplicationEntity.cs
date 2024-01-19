@@ -2,7 +2,7 @@
 
 namespace JobApplicationSystem.Entities
 {
-    public class ReviewApplicatioEntity
+    public class ReviewApplicationEntity
     {
         [Key]
         public int Id { get; set; }
