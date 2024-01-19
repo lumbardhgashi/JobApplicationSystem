@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using JobApplicationSystem.Entities;
-using JobApplicationSystem.Models;
+
 
 
 namespace JobApplicationSystem.Context
@@ -27,6 +27,7 @@ namespace JobApplicationSystem.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ApplicantEntity>().HasKey(x => x.Id);
+            modelBuilder.Entity<ApplyEntity>().HasKey(x => x.Id);
 
         
             

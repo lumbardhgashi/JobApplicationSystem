@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobApplicationSystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240119153703_InitialCreate")]
+    [Migration("20240119202337_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -75,6 +75,25 @@ namespace JobApplicationSystem.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ApplicationStatuses");
+                });
+
+            modelBuilder.Entity("JobApplicationSystem.Entities.ApplyEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("JobPostId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("applicantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Applies");
                 });
 
             modelBuilder.Entity("JobApplicationSystem.Entities.CompanyEntity", b =>
@@ -288,25 +307,6 @@ namespace JobApplicationSystem.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SkillSets");
-                });
-
-            modelBuilder.Entity("JobApplicationSystem.Models.ApplyEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("JobPostId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("applicantId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Applies");
                 });
 #pragma warning restore 612, 618
         }

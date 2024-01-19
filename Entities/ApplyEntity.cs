@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JobApplicationSystem.Models
+namespace JobApplicationSystem.Entities
 {
     public class ApplyEntity
     {
