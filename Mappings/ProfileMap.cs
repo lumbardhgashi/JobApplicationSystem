@@ -9,6 +9,8 @@ namespace JobApplicationSystem.Mappings
         public ProfileMap() {
             CreateMap<Applicant, ApplicantEntity>().ReverseMap();
             CreateMap<Apply, ApplyEntity>().ReverseMap();
+            CreateMap<JobPosting, JobPostingEntity>().ReverseMap();
+            CreateMap<Company, CompanyEntity>().ReverseMap();
         }
     }
 }
