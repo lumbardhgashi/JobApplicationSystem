@@ -44,18 +44,12 @@ namespace JobApplicationSystem.Services
             return company;
         }
 
-        public Company GetCompanyById(int id)
+        public Company GetCompanytById(int id)
         {
             var companyEntity = _companyRepository.GetCompanyById(id);
             var company = _mapper.Map<Company>(companyEntity);
             return company;
         }
-
-        public Company GetCompanytById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void UpdateCompany(Company company)
         {
             var existingCompany = _companyRepository.GetCompanyById(company.CompanyId);
