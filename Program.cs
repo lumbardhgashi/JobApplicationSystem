@@ -28,6 +28,8 @@ builder.Services.AddScoped<IJobPostingRepository, JobPostingRepository>();
 builder.Services.AddScoped<IJobPostingService, JobPostingService>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IReviewApplicationRepository, ReviewApplicationRepository>();
+builder.Services.AddScoped<IReviewApplicationService, ReviewApplicationService>();
 
 var app = builder.Build();
 
