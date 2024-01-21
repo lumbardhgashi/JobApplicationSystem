@@ -6,33 +6,33 @@ using Microsoft.AspNetCore.Mvc;
 namespace JobApplicationSystem.Controllers
 {
     [Route("api/[controller]")]
-    public class ApplyController : Controller
+    public class JobPostingController : Controller
     {
-        private readonly IApplyService _applyService;
+        private readonly IJobPostingService _jobPostingService;
 
-        public ApplyController(IApplyService applyService)
+        public JobPostingController(IJobPostingService jobPostingService)
         {
-            _applyService = applyService;
+            _jobPostingService = jobPostingService;
         }
 
-        [HttpGet("GetAllApplies")]
-        public List<Apply> GetAllApplies()
+        [HttpGet("GetAllJobPosts")]
+        public List<JobPosting> GetAllJobPosts()
         {
-            var result = _applyService.GetAllApplies();
+            var result = _jobPostingService.GetAllJobPosts();
             return result;
         }
 
-        [HttpGet("GetApplyById/{id}")]
-        public Apply GetApplyById(int id)
+        [HttpGet("GetJobPostById/{id}")]
+        public JobPosting GetJobPostingById(int id)
         {
-            return _applyService.GetApplyById(id);
+            return _jobPostingService.GetJobPostById(id);
         }
 
-        [HttpPost("CreateApply")]
-        public IActionResult CreateApply(Apply apply)
+        [HttpPost("CreateJobPost")]
+        public IActionResult CreateJobPosty(JobPosting jobPost)
         {
-            ApplyValidator validator = new ApplyValidator();
-            var validationResult = validator.Validate(apply);
+            JobPostingValidator validator = new JobPostingValidator();
+            var validationResult = validator.Validate(jobPost);
 
             if (!validationResult.IsValid)
             {
@@ -42,15 +42,15 @@ namespace JobApplicationSystem.Controllers
                 }
                 return BadRequest(ModelState);
             }
-            var createdApply = _applyService.CreateApply(apply);
-            return Ok(createdApply);
+            var createdJobPost = _jobPostingService.CreateJobPost(jobPost);
+            return Ok(createdJobPost);
         }
 
-        [HttpPut("UpdateApply/{id}")]
-        public IActionResult UpdateApply(int id, Apply apply)
+        [HttpPut("UpdateJobPost/{id}")]
+        public IActionResult UpdateJobPost(int id, JobPosting jobPost)
         {
-            var validator = new ApplyValidator();
-            var validationResult = validator.Validate(apply);
+            var validator = new JobPostingValidator();
+            var validationResult = validator.Validate(jobPost);
 
             if (!validationResult.IsValid)
             {
@@ -62,12 +62,12 @@ namespace JobApplicationSystem.Controllers
             }
             try
             {
-                var oldApply = _applyService.GetApplyById(id);
-                if (oldApply == null)
+                var oldJobPost = _jobPostingService.GetJobPostById(id);
+                if (oldJobPost == null)
                 {
                     return NotFound();
                 }
-                _applyService.UpdateApply(apply);
+                _jobPostingService.UpdateJobPost(jobPost);
                 return NoContent();
             }
             catch (Exception ex)
@@ -76,17 +76,17 @@ namespace JobApplicationSystem.Controllers
             }
         }
 
-        [HttpDelete("DeleteApply/{id}")]
-        public IActionResult DeleteApply(int id)
+        [HttpDelete("DeleteJobPost/{id}")]
+        public IActionResult DeleteJobPost(int id)
         {
             try
             {
-                var deletedApply = _applyService.GetApplyById(id);
-                if (deletedApply == null)
+                var deletedJobPost = _jobPostingService.GetJobPostById(id);
+                if (deletedJobPost == null)
                 {
                     return NotFound();
                 }
-                _applyService.DeleteApply(id);
+                _jobPostingService.DeleteJobPost(id);
                 return NoContent();
             }
             catch (Exception ex)
@@ -94,6 +94,5 @@ namespace JobApplicationSystem.Controllers
                 return StatusCode(500, "An error occurred while deleting the user.");
             }
         }
-
     }
 }
