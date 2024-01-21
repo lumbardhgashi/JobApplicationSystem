@@ -21,8 +21,8 @@ namespace JobApplicationSystem.Services
         {
             try
             {
-                var applicantEntity = _mapper.Map<ApplyEntity>(apply);
-                var result = _applyRepository.CreateApply(applicantEntity);
+                var applyEntity = _mapper.Map<ApplyEntity>(apply);
+                var result = _applyRepository.CreateApply(applyEntity);
                 var applyCreated = _mapper.Map<Apply>(apply);
                 return applyCreated;
             }catch(Exception ex)
