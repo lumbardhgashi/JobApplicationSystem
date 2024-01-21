@@ -11,6 +11,7 @@ namespace JobApplicationSystem.Mappings
             CreateMap<Apply, ApplyEntity>().ReverseMap();
             CreateMap<JobPosting, JobPostingEntity>().ReverseMap();
             CreateMap<Company, CompanyEntity>().ReverseMap();
+            CreateMap<ReviewApplication, ReviewApplicationEntity>().ReverseMap();
         }
     }
 }
