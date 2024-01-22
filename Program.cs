@@ -41,7 +41,8 @@ builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<IApplicationStatusRepository, ApplicationStatusRepository>();
 builder.Services.AddScoped<IApplicationStatusService, ApplicationStatusService>();
-
+builder.Services.AddScoped<IEducationHistoryRepository, EducationHistoryRepository>();
+builder.Services.AddScoped<IEducationHistoryService, EducationHistoryService>();
 
 
 var app = builder.Build();
