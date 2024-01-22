@@ -17,6 +17,7 @@ namespace JobApplicationSystem.Mappings
             CreateMap<Experience, ExperienceEntity>().ReverseMap();
             CreateMap<Department, DepartmentEntity>().ReverseMap();
             CreateMap<ApplicationStatus, ApplicationStatusEntity>().ReverseMap();
+            CreateMap<EducationHistory, EducationHistoryEntity>().ReverseMap();
         }
     }
 }
