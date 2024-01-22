@@ -33,6 +33,8 @@ builder.Services.AddScoped<IReviewApplicationRepository, ReviewApplicationReposi
 builder.Services.AddScoped<IReviewApplicationService, ReviewApplicationService>();
 builder.Services.AddScoped<ISkillSetRepository, SkillSetRepository>();
 builder.Services.AddScoped<ISkillSetService, SkillSetService>();
+builder.Services.AddScoped<IHrManagerRepository, HrManagerRepository>();
+builder.Services.AddScoped<IHrManagerService, HrManagerService>();
 builder.Services.AddScoped<IExperienceRepository, ExperienceRepository>();
 builder.Services.AddScoped<IExperienceService, ExperienceService>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
