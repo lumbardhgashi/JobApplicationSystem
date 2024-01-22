@@ -33,6 +33,8 @@ builder.Services.AddScoped<IReviewApplicationRepository, ReviewApplicationReposi
 builder.Services.AddScoped<IReviewApplicationService, ReviewApplicationService>();
 builder.Services.AddScoped<ISkillSetRepository, SkillSetRepository>();
 builder.Services.AddScoped<ISkillSetService, SkillSetService>();
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 
 var app = builder.Build();
 
