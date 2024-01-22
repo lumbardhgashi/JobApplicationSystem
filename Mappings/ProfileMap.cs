@@ -13,7 +13,7 @@ namespace JobApplicationSystem.Mappings
             CreateMap<JobPosting, JobPostingEntity>().ReverseMap();
             CreateMap<Company, CompanyEntity>().ReverseMap();
             CreateMap<ReviewApplication, ReviewApplicationEntity>().ReverseMap();
-
+            CreateMap<HRManager, HRManagerEntity>().ReverseMap();
         }
     }
 }
