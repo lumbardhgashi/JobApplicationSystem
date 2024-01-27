@@ -5,6 +5,7 @@ using JobApplicationSystem.Repositories.Interface;
 using JobApplicationSystem.Services;
 using JobApplicationSystem.Services.Interface;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +45,15 @@ builder.Services.AddScoped<IApplicationStatusService, ApplicationStatusService>(
 builder.Services.AddScoped<IEducationHistoryRepository, EducationHistoryRepository>();
 builder.Services.AddScoped<IEducationHistoryService, EducationHistoryService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Policy1", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+            .WithMethods("POST", "GET", "PUT", "DELETE")
+            .WithHeaders(HeaderNames.ContentType);
+    });
+});
 
 var app = builder.Build();
 
@@ -52,8 +62,9 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
-
+app.UseCors("Policy1");
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
