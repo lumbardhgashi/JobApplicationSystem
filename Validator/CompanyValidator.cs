@@ -15,8 +15,8 @@ namespace JobApplicationSystem.Validator
             RuleFor(x => x.Sektori).NotEmpty().WithMessage("Fill the Sektori Field!");
             RuleFor(x => x.Sektori).NotEmpty().MinimumLength(2).WithMessage("Sektori should have 2 characters at least!");
 
-            RuleFor(x => x.Adresa).NotEmpty().WithMessage("Fill the Adresa Field!");
-            RuleFor(x => x.Adresa).EmailAddress();
+            RuleFor(x => x.Email).NotEmpty().WithMessage("Fill the Adresa Field!");
+            RuleFor(x => x.Email).EmailAddress();
 
             RuleFor(x => x.NumriTelefonit).NotEmpty().WithMessage("Fill the NumriTelefonit Field!");
 

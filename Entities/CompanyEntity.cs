@@ -11,8 +11,11 @@ namespace JobApplicationSystem.Entities
         [Required]
         public string Sektori { get; set; }
         [Required]
-        public string Adresa { get; set; }
+        public string Email { get; set; }
         [Required]
-        public int NumriTelefonit { get; set; }
+        public string NumriTelefonit { get; set; }
+        public ICollection<DepartmentEntity> Departments { get; set; }
+        public ICollection<HRManagerEntity> HRManagers { get; set; }
+
     }
 }

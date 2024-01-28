@@ -7,14 +7,14 @@ namespace JobApplicationSystem.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public int School { get; set; }
+        public string School { get; set; }
         [Required]
-        public int StartDate { get; set; }
+        public string StartDate { get; set; }
         [Required]
-        public int EndDate { get; set; }
+        public string EndDate { get; set; }
         [Required]
         public string AvgGrade { get; set; }
         [Required]
-        public string ApplicantId { get; set; }
+        public int ApplicantId { get; set; }
     }
 }

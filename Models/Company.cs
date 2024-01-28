@@ -11,8 +11,8 @@ namespace JobApplicationSystem.Models
         [Required]
         public string Sektori { get; set; }
         [Required]
-        public string Adresa { get; set; }
+        public string Email { get; set; }
         [Required]
-        public int NumriTelefonit { get; set; }
+        public string NumriTelefonit { get; set; }
     }
 }

@@ -9,6 +9,8 @@ namespace JobApplicationSystem.Models
         [Required]
         public int ReviewApplicationId { get; set; }
         [Required]
+        public int ApplicantId { get; set; }
+        [Required]
         public string Status { get; set; }
         public string StatusDescription { get; set; }
     }
