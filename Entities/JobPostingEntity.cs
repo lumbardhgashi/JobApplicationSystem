@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JobApplicationSystem.Entities
 {
@@ -6,9 +7,9 @@ namespace JobApplicationSystem.Entities
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [ForeignKey("HrManager")]
         public int HrManagerId { get; set; }
-        [Required]
+        [ForeignKey("Department")]
         public int DepartmentId { get; set; }
         [Required]
         public string Tittle { get; set; }
@@ -16,5 +17,8 @@ namespace JobApplicationSystem.Entities
         public string Description { get; set; }
         [Required]
         public string Requriments { get; set; }
+        public ICollection<ApplyEntity> Applies { get; set; }
+        public DepartmentEntity Department { get; set; }
+        public HRManagerEntity HrManager { get; set; }
     }
 }

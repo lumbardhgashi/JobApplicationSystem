@@ -9,9 +9,9 @@ namespace JobApplicationSystem.Models
         [Required]
         public int ApplicantId { get; set; }
         [Required]
-        public int StartDate { get; set; }
+        public string StartDate { get; set; }
         [Required]
-        public int EndDate { get; set; }
+        public string EndDate { get; set; }
         [Required]
         public string CompanyName { get; set; }
     }
