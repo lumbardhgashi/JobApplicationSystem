@@ -22,6 +22,20 @@ namespace JobApplicationSystem.Controllers
             return result;
         }
 
+        [HttpGet("GetAllJobPostsByHrId/{id}")]
+        public List<JobPosting> GetAllJobPostsByHrId(int id)
+        {
+            var result = _jobPostingService.GetAllJobPostsByHrId(id);
+            return result;
+        }
+
+        [HttpGet("GetAllJobPostsByHrName/{name}")]
+        public List<JobPosting> GetAllJobPostsByHrName(string name)
+        {
+            var result = _jobPostingService.GetAllJobPostsByHrName(name);
+            return result;
+        }
+
         [HttpGet("GetJobPostById/{id}")]
         public JobPosting GetJobPostingById(int id)
         {

@@ -39,6 +39,14 @@ namespace JobApplicationSystem.Repositories
 
         }
 
+        public int GetNumberOfEmployesByCompanyId(int id)
+        {
+            var company = _dbContext.Companies.Find(id);
+            var companies = _dbContext.Departments.Where(d => d.CompanyId == id);
+            var nrOfEmployes = companies.Sum(d => d.NumriPunonjesve);
+            return nrOfEmployes;
+        }
+
         public void UpdateCompany(CompanyEntity company)
         {
             var oldCompany = _dbContext.Companies.Find(company.CompanyId);

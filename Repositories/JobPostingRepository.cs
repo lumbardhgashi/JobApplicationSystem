@@ -34,6 +34,20 @@ namespace JobApplicationSystem.Repositories
             return jobPosts;
         }
 
+        public List<JobPostingEntity> GetAllJobPostsByHrId(int id)
+        {
+            var jobPosts = _dbContext.JobPostings.Where(j => j.HrManagerId == id).ToList();
+            return jobPosts;
+        }
+
+        public List<JobPostingEntity> GetAllJobPostsByHrName(string name)
+        {
+            var hrManager = _dbContext.HrManagers.FirstOrDefault(hr => hr.Name == name);
+            var hrManagerId = hrManager.HRManagerId;
+            var jobPosts = _dbContext.JobPostings.Where(j => j.HrManagerId == hrManagerId).ToList();
+            return jobPosts;
+        }
+
         public JobPostingEntity GetJobPostById(int id)
         {
             var jobPost = _dbContext.JobPostings.Find(id);

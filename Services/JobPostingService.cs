@@ -43,6 +43,20 @@ namespace JobApplicationSystem.Services
             return jobPosts;
         }
 
+        public List<JobPosting> GetAllJobPostsByHrId(int id)
+        {
+            var jobPostsEntity = _jobPostingRepository.GetAllJobPostsByHrId(id);
+            var jobPosts = _mapper.Map<List<JobPosting>>(jobPostsEntity);
+            return jobPosts;
+        }
+
+        public List<JobPosting> GetAllJobPostsByHrName(string name)
+        {
+            var jobPostsEntity = _jobPostingRepository.GetAllJobPostsByHrName(name);
+            var jobPosts = _mapper.Map<List<JobPosting>>(jobPostsEntity);
+            return jobPosts;
+        }
+
         public JobPosting GetJobPostById(int id)
         {
             var jobPostEntity = _jobPostingRepository.GetJobPostById(id);

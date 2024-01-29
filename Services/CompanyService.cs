@@ -50,6 +50,14 @@ namespace JobApplicationSystem.Services
             var company = _mapper.Map<Company>(companyEntity);
             return company;
         }
+
+        public int GetNumberOfEmployesByCompanyId(int id)
+        {
+            var nr = _companyRepository.GetNumberOfEmployesByCompanyId(id);
+            return nr;
+
+        }
+
         public void UpdateCompany(Company company)
         {
             var existingCompany = _companyRepository.GetCompanyById(company.CompanyId);

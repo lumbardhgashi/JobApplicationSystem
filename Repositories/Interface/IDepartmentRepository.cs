@@ -8,6 +8,7 @@ namespace JobApplicationSystem.Repositories.Interface
         public void UpdateDepartment(DepartmentEntity department);
         public void DeleteDepartment(int id);
         public DepartmentEntity GetDepartmentById(int id);
+        public DepartmentEntity GetDepartmentByName(string name);
         public List<DepartmentEntity> GetAllDepartments();
     }
 }

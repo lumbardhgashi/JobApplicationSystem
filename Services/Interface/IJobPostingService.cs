@@ -8,6 +8,8 @@ namespace JobApplicationSystem.Services.Interface
         public void UpdateJobPost(JobPosting jobPosting);
         public void DeleteJobPost(int id);
         public JobPosting GetJobPostById(int id);
+        public List<JobPosting> GetAllJobPostsByHrId(int id);
+        public List<JobPosting> GetAllJobPostsByHrName(string name);
         public List<JobPosting> GetAllJobPosts();
     }
 }

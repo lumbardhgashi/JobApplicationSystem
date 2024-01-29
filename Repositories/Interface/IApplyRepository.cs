@@ -10,6 +10,7 @@ namespace JobApplicationSystem.Repositories.Interface
         public void UpdateApply(ApplyEntity apply);
         public void DeleteApply(int id);
         public ApplyEntity GetApplyById(int id);
+        public int GetNumberOfAppliesByJobPostId(int id);
         public List<ApplyEntity> GetAllApplies();
     }
 }

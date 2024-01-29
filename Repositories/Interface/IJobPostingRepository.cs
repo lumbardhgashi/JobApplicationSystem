@@ -8,6 +8,8 @@ namespace JobApplicationSystem.Repositories.Interface
         public void UpdateJobPost(JobPostingEntity jobPost);
         public JobPostingEntity GetJobPostById(int id);
         public List<JobPostingEntity> GetAllJobPosts();
+        public List<JobPostingEntity> GetAllJobPostsByHrId(int id);
+        public List<JobPostingEntity> GetAllJobPostsByHrName(string name);
         public void DeleteJobPostById(int id);
     }
 }

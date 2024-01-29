@@ -8,6 +8,7 @@ namespace JobApplicationSystem.Services.Interface
         public void UpdateCompany(Company company);
         public void DeleteCompany(int id);
         public Company GetCompanytById(int id);
+        public int GetNumberOfEmployesByCompanyId(int id);
         public List<Company> GetAllCompany();
     }
 }
