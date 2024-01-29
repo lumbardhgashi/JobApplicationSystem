@@ -27,6 +27,12 @@ namespace JobApplicationSystem.Controllers
             return _companyService.GetCompanytById(id);
         }
 
+        [HttpGet("GetNumberOfEmployesByCompanyId/{id}")]
+        public int GetNumberOfEmployesByCompanyId(int id)
+        {
+            return _companyService.GetNumberOfEmployesByCompanyId(id);
+        }
+
         [HttpPost("CreateCompany")]
         public IActionResult CreateCompany(Company company)
         {

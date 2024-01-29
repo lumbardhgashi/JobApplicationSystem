@@ -51,6 +51,13 @@ namespace JobApplicationSystem.Services
             return department;
         }
 
+        public Department GetDepartmentByName(string name)
+        {
+            var departmentEntity = _departmentRepository.GetDepartmentByName(name);
+            var department = _mapper.Map<Department>(departmentEntity);
+            return department;
+        }
+
         public void UpdateDepartment(Department department)
         {
             var existingDepartment = _departmentRepository.GetDepartmentById(department.DepartmentId);

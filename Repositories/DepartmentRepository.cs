@@ -38,6 +38,12 @@ namespace JobApplicationSystem.Repositories
             return department;
         }
 
+        public DepartmentEntity GetDepartmentByName(string name)
+        {
+            var department = _dbContext.Departments.FirstOrDefault(d => d.Name == name);
+            return department;
+        }
+
         public void UpdateDepartment(DepartmentEntity department)
         {
             var oldDepartment = _dbContext.Departments.Find(department.DepartmentId);

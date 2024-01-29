@@ -23,10 +23,16 @@ namespace JobApplicationSystem.Controllers
             return result;
         }
 
-        [HttpGet("GetAllDepartmentsById/ {id}")]
+        [HttpGet("GetDepartmentById/ {id}")]
         public Department GetDepartmentById(int id)
         {
             return _departmentService.GetDepartmentById(id);
+        }
+
+        [HttpGet("GetDepartmentByName/ {name}")]
+        public Department GetDepartmentByName(string name)
+        {
+            return _departmentService.GetDepartmentByName(name);
         }
 
         [HttpPost("CreateDepartment")]

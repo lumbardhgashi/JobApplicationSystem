@@ -28,6 +28,12 @@ namespace JobApplicationSystem.Controllers
             return _applyService.GetApplyById(id);
         }
 
+        [HttpGet("GetNumberOfAppliesByJobPostId/{id}")]
+        public int GetNumberOfAppliesByJobPostId(int id)
+        {
+            return _applyService.GetNumberOfAppliesByJobPostId(id);
+        }
+
         [HttpPost("CreateApply")]
         public IActionResult CreateApply(Apply apply)
         {

@@ -38,6 +38,13 @@ namespace JobApplicationSystem.Repositories
             return applyById;
         }
 
+        public int GetNumberOfAppliesByJobPostId(int id)
+        {
+            var jobPost = _dbContext.JobPostings.Find(id);
+            var nr = _dbContext.Applies.Where(a => a.JobPostId == jobPost.Id).Count();
+            return nr;
+        }
+
         public void UpdateApply(ApplyEntity apply)
         {
             var oldApply = _dbContext.Applies.Find(apply.Id);

@@ -8,6 +8,7 @@ namespace JobApplicationSystem.Services.Interface
         public void UpdateDepartment(Department department);
         public void DeleteDepartment(int id);
         public Department GetDepartmentById(int id);
+        public Department GetDepartmentByName(string name);
         public List<Department> GetAllDepartments();
     }
 }

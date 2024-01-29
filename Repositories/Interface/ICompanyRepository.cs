@@ -8,6 +8,7 @@ namespace JobApplicationSystem.Repositories.Interface
         public void UpdateCompany(CompanyEntity company);
         public void DeleteCompany(int id);
         public CompanyEntity GetCompanyById(int id);
+        public int GetNumberOfEmployesByCompanyId(int id);
         public List<CompanyEntity> GetAllCompany();
     }
 }

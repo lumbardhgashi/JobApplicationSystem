@@ -50,6 +50,11 @@ namespace JobApplicationSystem.Services
             return applyModel;
         }
 
+        public int GetNumberOfAppliesByJobPostId(int id)
+        {
+            return _applyRepository.GetNumberOfAppliesByJobPostId(id);
+        }
+
         public void UpdateApply(Apply apply)
         {
             var applyEntity = _mapper.Map<ApplyEntity>(apply);
